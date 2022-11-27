@@ -1,0 +1,37 @@
+body {
+    font-size: 1rem;
+    background-color: #0d1117;
+    color: white;
+    font-family: 'Readex Pro', sans-serif;
+}
+
+.project {
+    display: inline-block;
+}
+
+.project>a {
+    text-align: center;
+    display: block;
+}
+
+
+.project-image {
+    width: 8rem;
+    height: 8rem;
+    margin: 1em;
+
+    border: 3px solid rgba(255,255,255,0.3);
+    border-radius: 1%;
+    transition: .3s;
+}
+
+.project-image:hover {
+    color: #fff;
+    box-shadow: 0 0.5em 0.5em -0.4em #fff; 
+    transform: translateY(-0.25em);
+    cursor: pointer;
+}
+
+.title {
+    text-decoration: underline;
+}
