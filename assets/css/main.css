@@ -2043,7 +2043,7 @@ input, select, textarea {
 		cursor: default;
 		list-style: none;
 		padding-left: 0;
-		margin: -2em 0 6em -1em;
+		margin: -2em 0 5.5rem -1em;
 	}
 
 		ul.icons li {
