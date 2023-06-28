@@ -16,5 +16,5 @@ inquiryForm.addEventListener("submit", (e) => {
       email: inquiry.email.value,
       message: inquiry.message.value,
     }),
-  })
+  }).then(() => {})
 });
