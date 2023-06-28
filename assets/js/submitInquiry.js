@@ -1,4 +1,5 @@
 const inquiryForm = document.querySelector("#inquiry-form");
+const submitBtn = document.querySelector("#submit-btn");
 
 inquiryForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -16,5 +17,11 @@ inquiryForm.addEventListener("submit", (e) => {
       email: inquiry.email.value,
       message: inquiry.message.value,
     }),
-  }).then(() => {})
+  }).then(() => {
+    submitBtn.value = "Sent!"
+    inquiryForm.reset()
+    setTimeout(() => {
+      submitBtn.value = "Send"
+    }, 3000)
+  })
 });
