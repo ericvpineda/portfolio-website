@@ -11,7 +11,7 @@ export default function Hero() {
         <div className="text-center">
           <p className="font-medium text-lg">Hi, I'm</p>
           <p className="header_title">Eric Pineda</p>
-          <p className="font-medium text-4xl">Fullstack Developer</p>
+          <p className="font-medium text-4xl">Full Stack Developer</p>
           <div className="flex justify-center gap-4">
             <button className="hero_button">Resume</button>
             <button className="hero_button">Contact</button>

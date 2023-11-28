@@ -4,8 +4,8 @@ import SchoolIcon from "@mui/icons-material/School";
 
 export default function About() {
   return (
-    <div className="section bg-red-600 flex-col">
-      <div className="text-center">
+    <div id="about" className="section bg-red-600 flex-col">
+      <div className="text-center mb-10">
         <h2 className="section_text">Get to know more</h2>
         <h1 className="header_title">About Me</h1>
       </div>
@@ -26,7 +26,7 @@ export default function About() {
                   Experience
                 </h3>
                 <p className="section_text">1+ years</p>
-                <p className="section_text">FullStack Development</p>
+                <p className="section_text">Full Stack Development</p>
               </div>
             </div>
             <div className="section_border">
