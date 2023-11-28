@@ -4,6 +4,7 @@
 start.sh
 notes.md
 package-lock.json
+.next
 
 # dependencies
 /node_modules

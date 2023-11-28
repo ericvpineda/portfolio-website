@@ -1,6 +1,7 @@
-import hiking from "../public/img/hiking.jpg";
+import hiking from "@public/img/hiking.jpg";
 import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
 import SchoolIcon from "@mui/icons-material/School";
+import Image from "next/image"
 
 export default function About() {
   return (
@@ -11,7 +12,7 @@ export default function About() {
       </div>
 
       <div className="flex items-center gap-5 px-12">
-        <img
+        <Image
           src={hiking}
           alt=""
           className="object-cover max-h-64 min-h-[16rem] max-w-[16rem] rounded-2xl"
