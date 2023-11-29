@@ -2,7 +2,7 @@
 const nextConfig = {
   experimental: {},
   images: {
-    domains: [],
+    domains: ["www.github.com"],
   },
 };
 

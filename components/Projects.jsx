@@ -1,4 +1,23 @@
+'use client'
+import { useEffect, useState } from 'react';
+import axios from "axios";
+import Image from "next/image"
+
 export default function Projects() {
+
+  const [projects, setprojects] = useState([])
+
+  const fetchProjects = async () => {
+
+    const query = "/api/projects"
+    const {data} = await axios.get(query);
+    setprojects(data)
+  }
+  
+  useEffect(() => {
+    fetchProjects()
+  }, [])
+
   return (
     <div id="projects" className="section flex-col">
       <div className="text-center mb-10">
@@ -7,14 +26,18 @@ export default function Projects() {
       </div>
 
       <div className="grid grid-cols-3 w-full px-20 gap-4">
-        <div className="section_border">
-          <img src="" alt="Project" />
-          <h3 className="font-semibold text-xl tracking-wide">Backend</h3>
-          <div className="flex">
-            <button className="hero_button">Github</button>
-            <button className="hero_button">Demo</button>
-          </div>
-        </div>
+        {projects.length > 0 && projects.map(project => (
+           <div className="section_border">
+          
+           {project.image && <Image src={project.image} alt="Project" height={200} width={200} className='w-full ' />}
+           
+           <h3 className="font-semibold text-xl tracking-wide">{project.name}</h3>
+           <div className="flex">
+             <button className="hero_button">Github</button>
+             <button className="hero_button">Demo</button>
+           </div>
+         </div>
+        ))}
       </div>
     </div>
   );

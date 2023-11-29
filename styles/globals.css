@@ -20,7 +20,7 @@ html, body, #root {
 }
 
 .section {
-    @apply flex justify-center items-center w-full h-[30rem]
+    @apply flex justify-center items-center w-full h-[60rem]
 }
 
 .section_text {
