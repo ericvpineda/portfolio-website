@@ -1,6 +1,6 @@
 import { JSDOM } from "jsdom";
 
-export async function GET(req, res) {
+export async function GET() {
   try {
     const projectsFormatted = [];
     
@@ -13,7 +13,9 @@ export async function GET(req, res) {
       "svg + span[data-view-component='true'] > a "
     );
 
+    
     for (let project of documentProjects) {
+      console.log("DEBUG: project=", project.href)
       response = await fetch("https://github.com" + project.href);
       html = await response.text();
 

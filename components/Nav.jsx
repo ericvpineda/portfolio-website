@@ -1,8 +1,8 @@
 export default function Nav() {
   return (
-    <nav className="flex justify-between items-center py-5">
-      <div className="pl-5 text-4xl font-light">Eric Pineda</div>
-      <div className="pr-5 flex text-3xl font-light gap-5 items-center">
+    <nav className="flex justify-between items-center py-10 px-3">
+      <div className="pb-2 pl-5 text-3xl font-normal">Eric Pineda</div>
+      <div className="pr-5 flex text-2xl font-light gap-5 items-center">
         <a href="#about" className="nav_links">
           About
         </a>

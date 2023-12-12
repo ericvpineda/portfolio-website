@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,7 +10,7 @@ html, body, #root {
 }
 
 .nav_links {
-    @apply cursor-pointer hover:border-b-2 hover:border-black hover:border-solid
+    @apply hover:border-[#495057] hover:text-[#495057] py-2 cursor-pointer border-b-[3px] hover:border-b-[3px] border-transparent hover:border-solid
 }
 
 .hero_button {
