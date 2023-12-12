@@ -5,21 +5,21 @@ import Image from "next/image"
 
 export default function About() {
   return (
-    <div id="about" className="section bg-red-600 flex-col">
+    <div id="about" className="section flex-col mt-40 sm:mt-10">
       <div className="text-center mb-10">
         <h2 className="section_text">Get to know more</h2>
         <h1 className="header_title">About Me</h1>
       </div>
 
-      <div className="flex items-center gap-5 px-12">
+      <div className="flex items-center gap-5 px-12 flex-col sm:flex-row">
         <Image
           src={hiking}
           alt=""
-          className="object-cover max-h-64 min-h-[16rem] max-w-[16rem] rounded-2xl"
+          className="object-cover max-h-64 min-h-[16rem] max-w-[16rem] sm:min-h-[19rem] sm:max-w-[19rem] md:min-h-[22rem] md:max-w-[22rem] rounded-2xl"
         />
 
-        <div className="flex flex-col justify-center">
-          <div className="flex justify-center gap-5">
+        <div className="flex flex-col justify-center h-full">
+          <div className="flex flex-col sm:flex-row  justify-center gap-5 mb-5">
             <div className="section_border">
               <WorkspacePremiumIcon />
               <div className="text-center">
