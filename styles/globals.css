@@ -34,9 +34,9 @@ html, body, #root {
 }
 
 .section_border {
-    @apply border-black rounded-xl border-2 p-6 flex justify-center flex-col items-center w-full
+    @apply w-full border-black rounded-xl border-2 p-6 flex justify-center flex-col items-center
 }
 
 .experience_tech {
-    @apply grid grid-cols-4 w-full
+    @apply grid grid-cols-2 sm:grid-cols-3 w-full gap-0 md:gap-5
 }

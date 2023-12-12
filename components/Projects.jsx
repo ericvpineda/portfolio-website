@@ -9,10 +9,10 @@ export default function Projects() {
 
   const fetchProjects = async () => {
 
-    const query = "/api/projects"
-    const {data} = await axios.get(query);
-    console.log("DEBUG: data=", data)
-    setprojects(data)
+    // const query = "/api/projects"
+    // const {data} = await axios.get(query);
+    // console.log("DEBUG: data=", data)
+    // setprojects(data)
   }
   
   useEffect(() => {
@@ -20,7 +20,7 @@ export default function Projects() {
   }, [])
 
   return (
-    <div id="projects" className="section flex-col">
+    <div id="projects" className="section flex-col sm:mt-0">
       <div className="text-center mb-10">
         <h2 className="section_text">Wander my recent</h2>
         <h1 className="header_title">Projects</h1>
