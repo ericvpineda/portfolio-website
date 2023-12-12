@@ -1,21 +1,87 @@
+"use client";
+import { Disclosure } from "@headlessui/react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+
+const navigation = [
+  { name: "About", href: "#about", current: true },
+  { name: "Experience", href: "#experience", current: false },
+  { name: "Projects", href: "#projects", current: false },
+  { name: "Contact", href: "#contact", current: false },
+];
+
+function classNames(...classes) {
+  return classes.filter(Boolean).join(" ");
+}
+
 export default function Nav() {
   return (
-    <nav className="flex justify-between items-center py-10 px-3">
-      <div className="pb-2 pl-5 text-3xl font-normal">Eric Pineda</div>
-      <div className="pr-5 flex text-2xl font-light gap-5 items-center">
-        <a href="#about" className="nav_links">
-          About
-        </a>
-        <a href="#experience" className="nav_links">
-          Experience
-        </a>
-        <a href="#projects" className="nav_links">
-          Projects
-        </a>
-        <a href="#contact" className="nav_links">
-          Contact
-        </a>
-      </div>
-    </nav>
+    <Disclosure as="nav" className="bg-white w-full">
+      {({ open }) => (
+        <>
+          <div className="relative mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 md:py-10 p-3">
+            <div className="absolute pt-3 pb-2 pl-5 text-3xl font-normal">Eric Pineda</div>
+
+            <div className="relative flex h-16 items-center justify-between">
+              <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
+                {/* Mobile menu button*/}
+                <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                  <span className="absolute -inset-0.5" />
+                  <span className="sr-only">Open main menu</span>
+                  {open ? (
+                    <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
+                  ) : (
+                    <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
+                  )}
+                </Disclosure.Button>
+              </div>
+              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-end">
+                <div className="hidden sm:ml-6 sm:block">
+                  <div className="flex space-x-4">
+                    {navigation.map((item) => (
+                      <a
+                        key={item.name}
+                        href={item.href}
+                        className={classNames(
+                          "nav_links"
+                          // item.current
+                          //   ? "bg-gray-900 text-white"
+                          //   : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                          // "rounded-md px-3 py-2 text-sm font-medium"
+                        )}
+                        aria-current={item.current ? "page" : undefined}
+                      >
+                        {item.name}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile Links  */}
+          <Disclosure.Panel className="sm:hidden">
+            <div className="space-y-1 px-2 pb-3 pt-2">
+              {navigation.map((item) => (
+                <Disclosure.Button
+                  key={item.name}
+                  as="a"
+                  href={item.href}
+                  className={classNames(
+                    item.current
+                      ? "bg-gray-900 text-white"
+                      : "text-gray-500 hover:bg-gray-700 hover:text-white",
+                    "block rounded-md px-3 py-2 text-base font-medium"
+                  )}
+                  aria-current={item.current ? "page" : undefined}
+                >
+                  {item.name}
+                </Disclosure.Button>
+              ))}
+            </div>
+          </Disclosure.Panel>
+        </>
+      )}
+    </Disclosure>
   );
 }
