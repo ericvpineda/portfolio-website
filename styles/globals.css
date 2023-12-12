@@ -14,15 +14,19 @@ html, body, #root {
 }
 
 .hero_button {
-    @apply font-semibold text-sm border-2 border-black rounded-full py-3 px-5 tracking-wider
+    @apply cursor-pointer font-semibold text-sm border-2 rounded-full py-3 px-5 tracking-wider
+}
+
+.hero_image_profile {
+    @apply max-h-[15rem] max-w-[15rem] sm:max-h-[18rem] sm:max-w-[18rem] md:max-h-[21rem] md:max-w-[21rem] lg:max-h-[24rem] lg:max-w-[24rem] w-full rounded-full
 }
 
 .header_title {
-    @apply font-bold text-3xl tracking-wide
+    @apply my-3 md:my-4 font-semibold text-4xl sm:text-5xl tracking-normal
 }
 
 .section {
-    @apply flex justify-center items-center w-full h-[60rem]
+    @apply flex justify-center items-center w-full h-[40rem] md:-mt-14 mb-10
 }
 
 .section_text {
