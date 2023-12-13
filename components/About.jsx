@@ -5,7 +5,8 @@ import Image from "next/image"
 
 export default function About() {
   return (
-    <div id="about" className="section flex-col mt-40 sm:mt-10 mb-56 sm:mb-0">
+    <div id="about" className="section flex-col sm:mt-10 sm:mb-0">
+      <div/>
       <div className="text-center mb-10">
         <h2 className="section_text">Get to know more</h2>
         <h1 className="header_title">About Me</h1>

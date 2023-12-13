@@ -19,7 +19,9 @@ export default function Nav() {
       {({ open }) => (
         <>
           <div className="relative mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 md:py-10 p-3">
-            <div className="absolute pt-3 pb-2 pl-5 text-3xl font-normal">Eric Pineda</div>
+            <div className="absolute pt-3 pb-2 pl-5 text-3xl font-normal">
+              Eric Pineda
+            </div>
 
             <div className="relative flex h-16 items-center justify-between">
               <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
@@ -43,10 +45,6 @@ export default function Nav() {
                         href={item.href}
                         className={classNames(
                           "nav_links"
-                          // item.current
-                          //   ? "bg-gray-900 text-white"
-                          //   : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                          // "rounded-md px-3 py-2 text-sm font-medium"
                         )}
                         aria-current={item.current ? "page" : undefined}
                       >
@@ -68,9 +66,7 @@ export default function Nav() {
                   as="a"
                   href={item.href}
                   className={classNames(
-                    item.current
-                      ? "bg-gray-900 text-white"
-                      : "text-gray-500 hover:bg-gray-700 hover:text-white",
+                    "text-gray-500 hover:bg-[#b9182f] hover:text-white",
                     "block rounded-md px-3 py-2 text-base font-medium"
                   )}
                   aria-current={item.current ? "page" : undefined}

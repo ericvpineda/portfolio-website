@@ -9,10 +9,10 @@ export default function Projects() {
 
   const fetchProjects = async () => {
 
-    // const query = "/api/projects"
-    // const {data} = await axios.get(query);
-    // console.log("DEBUG: data=", data)
-    // setprojects(data)
+    const query = "/api/projects"
+    const {data} = await axios.get(query);
+    console.log("DEBUG: data=", data)
+    setprojects(data)
   }
   
   useEffect(() => {
@@ -26,7 +26,7 @@ export default function Projects() {
         <h1 className="header_title">Projects</h1>
       </div>
 
-      <div className="grid grid-cols-3 w-full px-20 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-full px-20 gap-4">
         {projects.length > 0 && projects.map(project => (
            <div className="section_border">
           

@@ -25,7 +25,7 @@ export default function Experience() {
   ];
 
   return (
-    <div id="experience" className="section flex-col mb-5 px-10 mt-56 sm:mt-0">
+    <div id="experience" className="section flex-col mb-5 px-10 md:mt-10 md:mb-20">
       <div className="text-center mb-10">
         <h2 className="section_text">Journey through my</h2>
         <h1 className="header_title">Experience</h1>
