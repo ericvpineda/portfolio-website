@@ -4,7 +4,7 @@ export async function GET() {
   try {
     const projectsFormatted = [];
     
-    let response = await fetch("https://github.com/ericvpineda");
+    let response = await fetch("https://github.com/ericvpineda", {cache: "reload"});
     let html = await response.text();
 
     let DOM = new JSDOM(html);
