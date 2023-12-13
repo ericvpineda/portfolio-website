@@ -4,7 +4,7 @@ export async function GET() {
   try {
     const projectsFormatted = [];
     
-    let response = await fetch("https://github.com/ericvpineda", {cache: "reload"});
+    let response = await fetch("https://github.com/ericvpineda", {cache: "no-store"});
     let html = await response.text();
 
     let DOM = new JSDOM(html);
@@ -16,7 +16,7 @@ export async function GET() {
     
     for (let project of documentProjects) {
       const url = "https://github.com" + project.href;
-      response = await fetch(url, {cache: "reload"});
+      response = await fetch(url, {cache: "no-store"});
       html = await response.text();
 
       DOM = new JSDOM(html);
