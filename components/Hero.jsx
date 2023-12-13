@@ -15,7 +15,7 @@ export default function Hero() {
           <p className="mb-3 md:mb-4 font-medium text-3xl md:text-4xl tracking-tighter text-[#495057]">Full Stack Developer</p>
           <div className="mb-1 flex justify-center gap-4">
             <a href="/files/resume.pdf" className="hero_button bg-[#b9182f] hover:bg-[#9e2a2b] text-white">Resume</a>
-            <a href="#contact" className="hero_button border-black hover:text-white hover:bg-black">Contact</a>
+            <a href="#contact" className="hero_button hero_button_hover">Contact</a>
           </div>
           <div>
             <IconButton href="https://www.linkedin.com/in/ericvpineda">

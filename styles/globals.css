@@ -18,6 +18,10 @@ html, body, #root {
     @apply cursor-pointer font-semibold text-sm border-2 rounded-full py-3 px-5 tracking-wider
 }
 
+.hero_button_hover {
+    @apply border-black hover:text-white hover:bg-black
+}
+
 .hero_image_profile {
     @apply max-h-[15rem] max-w-[15rem] sm:max-h-[18rem] sm:max-w-[18rem] md:max-h-[21rem] md:max-w-[21rem] lg:max-h-[24rem] lg:max-w-[24rem] w-full rounded-full
 }

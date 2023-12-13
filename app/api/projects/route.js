@@ -15,8 +15,8 @@ export async function GET() {
 
     
     for (let project of documentProjects) {
-      console.log("DEBUG: project=", project.href)
-      response = await fetch("https://github.com" + project.href);
+      const url = "https://github.com" + project.href;
+      response = await fetch(url, {cache: "reload"});
       html = await response.text();
 
       DOM = new JSDOM(html);
@@ -27,7 +27,8 @@ export async function GET() {
       const length = documentImage.length;
       const item = {
         name: "",
-        image: ""
+        image: "",
+        url
       };
       item["name"] = project.textContent.replaceAll("\n", "");
 
