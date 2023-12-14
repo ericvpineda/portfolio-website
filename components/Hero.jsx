@@ -16,7 +16,7 @@ export default function Hero() {
             src={selfImage}
             alt="self"
           />
-          <div className="z-10 text-center bg-white rounded-lg p-8">
+          <div className="z-10 text-center bg-white rounded-full p-8">
             <p className="font-semibold text-md md:font-medium md:text-lg text-[#495057] tracking-tight">
               Welcome, I'm
             </p>
