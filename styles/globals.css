@@ -19,7 +19,7 @@ html, body, #root {
 }
 
 .hero_button_hover {
-    @apply border-black hover:text-white hover:bg-black
+    @apply border-gray-400 hover:text-white hover:bg-gray-400 text-[#495057]
 }
 
 .hero_image_profile {
@@ -39,7 +39,7 @@ html, body, #root {
 }
 
 .section_border {
-    @apply w-full border-black rounded-xl border-2 p-6 flex justify-center flex-col items-center
+    @apply w-full border-gray-400 rounded-xl border-2 p-6 flex justify-center flex-col items-center
 }
 
 .experience_tech {
@@ -48,4 +48,8 @@ html, body, #root {
 
 .experience_tech_item {
     @apply text-lg font-semibold
+}
+
+.project_images {
+    @apply min-w-[15rem] max-w-[15rem] min-h-[15rem] max-h-[15rem] sm:min-w-[20rem] sm:max-w-[20rem] sm:min-h-[20rem] sm:max-h-[20rem]
 }

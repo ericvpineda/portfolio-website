@@ -20,7 +20,7 @@ export default function Projects() {
   return (
     <div
       id="projects"
-      className="flex justify-center items-center w-full min-h-[60rem] md:-mt-14 mb-56 flex-col"
+      className="flex justify-center items-center w-full flex-col md:mb-22"
     >
       <div className="text-center mb-10">
         <h2 className="section_text">Wander my recent</h2>
@@ -28,20 +28,22 @@ export default function Projects() {
       </div>
 
       {projects.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-full px-10 gap-4">
-          {projects.map((project) => (
-            <div className="section_border">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full px-5 gap-4">
+          {projects.map((project, index) => (
+            <div key={index} className="section_border">
               {project.image ? (
-                <Image
-                  priority={true}
-                  src={project.image}
-                  alt="Project"
-                  height={500}
-                  width={500}
-                  className="rounded-lg min-w-[12rem] max-w-[12rem] min-h-[12rem] max-h-[12rem] object-cover"
-                />
+                <a href={project.url} className="cursor-pointer">
+                  <Image
+                    priority={true}
+                    src={project.image}
+                    alt="Project"
+                    height={800}
+                    width={800}
+                    className="rounded-lg project_images object-cover"
+                  />
+                </a>
               ) : (
-                <div className="flex justify-center items-center rounded-lg min-w-[12rem] max-w-[12rem] min-h-[12rem] max-h-[12rem] bg-black">
+                <div className="flex justify-center items-center rounded-lg project_images bg-black">
                   <div className="text-white">Image to be made...</div>
                 </div>
               )}

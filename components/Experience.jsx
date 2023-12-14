@@ -35,7 +35,7 @@ export default function Experience() {
           <h3 className="font-semibold text-3xl tracking-wide text-[#495057]">Frontend</h3>
           <ul className="experience_tech">
             {frontendTech.map((tech) => (
-              <li className="whitespace-nowrap experience_tech_item">
+              <li className="whitespace-nowrap experience_tech_item overflow-hidden">
                 <CodeIcon />
                 {tech}
               </li>
@@ -48,7 +48,7 @@ export default function Experience() {
           </h3>
           <ul className="experience_tech">
             {backendTech.map((tech) => (
-              <li className="whitespace-nowrap experience_tech_item">
+              <li className="whitespace-nowrap experience_tech_item overflow-hidden">
                 <CodeOffIcon />
                 {tech}
               </li>
