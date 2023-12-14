@@ -10,13 +10,13 @@ export default function Hero() {
     <div className="-z-20 section mt-5 md:mt-0 overflow-hidden">
       <div className="z-0 relative grid place-content-center">
         <DotGrid />
-        <div className="z-10 flex flex-col md:flex-row justify-center items-center gap-20 mt-10 sm:mt-0">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-20 mt-10 sm:mt-0">
           <Image
-            className="hero_image_profile"
+            className="z-10 hero_image_profile"
             src={selfImage}
             alt="self"
           />
-          <div className="text-center bg-white rounded-lg p-8">
+          <div className="z-10 text-center bg-white rounded-lg p-8">
             <p className="font-semibold text-md md:font-medium md:text-lg text-[#495057] tracking-tight">
               Welcome, I'm
             </p>

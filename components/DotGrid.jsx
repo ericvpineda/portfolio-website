@@ -1,8 +1,9 @@
 "use client";
 
 import anime from "animejs";
+import { useEffect } from "react";
 
-const GRID_WIDTH = 45;
+const GRID_WIDTH = 42;
 const GRID_HEIGHT = 20;
 export default function DotGrid() {
   const handleDotClick = (e) => {
@@ -22,8 +23,8 @@ export default function DotGrid() {
       ],
       delay: anime.stagger(100, {
         grid: [GRID_WIDTH, GRID_HEIGHT],
-        from: e.target.dataset.index
-      })
+        from: e.target.dataset.index,
+      }),
     });
   };
 
@@ -43,15 +44,25 @@ export default function DotGrid() {
           ></div>
         </div>
       );
-      index ++;
+      index++;
     }
   }
+
+  useEffect(() => {
+    handleDotClick({
+      target: {
+        dataset: {
+          index: 0,
+        },
+      },
+    });
+  }, []);
+
   return (
     <div
-      onMouseEnter={handleDotClick}
       onClick={handleDotClick}
       style={{ gridTemplateColumns: `repeat(${GRID_WIDTH}, 1fr)` }}
-      className="-z-10 absolute left-0 -translate-x-[10%] -translate-y-[10%] grid w-fit bg-white overflow-hidden"
+      className="z-5 absolute left-0 -translate-x-[10%] -translate-y-[10%] grid w-fit bg-white overflow-hidden"
     >
       {dots}
     </div>
