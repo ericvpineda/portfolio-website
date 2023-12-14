@@ -12,7 +12,7 @@ export default function Contact() {
       <a href="mailto:ericvpineda@berkeley.edu">
       <div className="flex items-center border-2 border-gray-400 border-solid rounded-full p-2">
         <IconButton >
-          <SendIcon sx={{height: "2rem", width: "2rem"}}/>
+          <SendIcon sx={{height: "2rem", width: "2rem", color: "#b9182f"}}/>
         </IconButton>
         <div className="my-3 md:my-4 font-semibold text-lg sm:text-3xl tracking-normal text-[#495057]" >ericvpineda@berkeley.edu</div>
       </div>
