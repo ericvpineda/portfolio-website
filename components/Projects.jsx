@@ -10,7 +10,6 @@ export default function Projects() {
   const fetchProjects = async () => {
     const query = "/api/projects";
     const { data } = await axios.get(query);
-    console.log("DEBUG: data=", data);
     setprojects(data);
   };
 
