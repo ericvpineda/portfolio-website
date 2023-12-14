@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {},
+  output: 'export',
   images: {
     domains: ["www.github.com"],
   },
