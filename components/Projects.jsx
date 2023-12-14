@@ -28,7 +28,7 @@ export default function Projects() {
       </div>
 
       {projects.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-full px-20 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-full px-10 gap-4">
           {projects.map((project) => (
             <div className="section_border">
               {project.image ? (
