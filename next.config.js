@@ -1,10 +1,20 @@
 /** @type {import('next').NextConfig} */
 
-const nextConfig = {
-  output: process.env.NODE_ENV === "development" ? "" : "export",
-  images: {
-    domains: ["www.github.com"],
-  },
-};
+let nextConfig = null;
+
+if (process.env.NODE_ENV === "development") {
+  nextConfig = {
+    images: {
+      domains: ["www.github.com"],
+    },
+  };
+} else {
+  nextConfig = {
+    output: "export",
+    images: {
+      domains: ["www.github.com"],
+    },
+  };
+}
 
 module.exports = nextConfig;

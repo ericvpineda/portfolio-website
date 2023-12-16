@@ -5,6 +5,7 @@ start.sh
 notes.md
 package-lock.json
 .next
+.env
 
 # dependencies
 /node_modules

@@ -53,3 +53,7 @@ html, body, #root {
 .project_images {
     @apply min-w-[15rem] max-w-[15rem] min-h-[15rem] max-h-[15rem] sm:min-w-[20rem] sm:max-w-[20rem] sm:min-h-[20rem] sm:max-h-[20rem]
 }
+
+.footer_links {
+    @apply mb-3 font-medium py-1 cursor-pointer border-solid border-b-[1px] border-[black] text-base sm:text-lg md:text-xl
+}
