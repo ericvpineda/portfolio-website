@@ -1,13 +1,12 @@
 import { JSDOM } from "jsdom";
 import axios from "axios";
-import { ConnectingAirportsOutlined } from "@mui/icons-material";
 
 const GITHUB_URL = "https://github.com/ericvpineda";
 
 export async function GET() {
   const projectsFormatted = [];
   try {
-    let { data } = await axios.get(GITHUB_URL);
+    let { data } = await axios.get(GITHUB_URL, {cache: false});
     let DOM = new JSDOM(data);
     let document = DOM.window.document;
     const documentProjects = document.querySelectorAll(
@@ -16,7 +15,7 @@ export async function GET() {
 
     for (let project of documentProjects) {
       const url = "https://github.com" + project.href;
-      let { data } = await axios.get(url);
+      let { data } = await axios.get(url, {cache: false});
 
       DOM = new JSDOM(data);
       document = DOM.window.document;
