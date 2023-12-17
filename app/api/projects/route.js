@@ -1,5 +1,8 @@
 import { JSDOM } from "jsdom";
 
+
+export const revalidate = 10;
+
 export async function GET() {
   try {
     const projectsFormatted = [];
