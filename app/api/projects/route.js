@@ -1,25 +1,25 @@
 import { JSDOM } from "jsdom";
+import axios from "axios";
+
+const GITHUB_URL = "https://github.com/ericvpineda";
 
 export async function GET() {
   try {
     const projectsFormatted = [];
-    
-    let response = await fetch("https://github.com/ericvpineda", {cache: "no-store"});
-    let html = await response.text();
 
-    let DOM = new JSDOM(html);
+    let { data } = await axios.get(GITHUB_URL, { cache: false });
+    let DOM = new JSDOM(data);
     let document = DOM.window.document;
     const documentProjects = document.querySelectorAll(
       "svg + span[data-view-component='true'] > a "
     );
 
-    
     for (let project of documentProjects) {
-      const url = "https://github.com" + project.href;
-      response = await fetch(url, {cache: "no-store"});
-      html = await response.text();
+      let { data } = await axios.get("https://github.com" + project.href, {
+        cache: false,
+      });
 
-      DOM = new JSDOM(html);
+      DOM = new JSDOM(data);
       document = DOM.window.document;
       const documentImage = document.querySelectorAll(
         "p[dir='auto'] > a > img"
@@ -28,7 +28,7 @@ export async function GET() {
       const item = {
         name: "",
         image: "",
-        url
+        url,
       };
       item["name"] = project.textContent.replaceAll("\n", "");
 
