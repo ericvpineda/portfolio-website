@@ -1,10 +1,12 @@
 import { JSDOM } from "jsdom";
 import axios from "axios";
+import { unstable_noStore as noStore } from 'next/cache';
 
 const GITHUB_URL = "https://github.com/ericvpineda";
 
 export async function GET() {
   const projectsFormatted = [];
+  noStore()
   try {
     let { data } = await axios.get(GITHUB_URL, {cache: false});
     let DOM = new JSDOM(data);
