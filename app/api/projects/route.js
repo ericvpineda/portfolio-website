@@ -1,25 +1,25 @@
 import { JSDOM } from "jsdom";
-import axios from "axios";
-import { unstable_noStore as noStore } from 'next/cache';
-
-const GITHUB_URL = "https://github.com/ericvpineda";
 
 export async function GET() {
-  const projectsFormatted = [];
-  noStore()
   try {
-    let { data } = await axios.get(GITHUB_URL, {cache: false});
-    let DOM = new JSDOM(data);
+    const projectsFormatted = [];
+    
+    let response = await fetch("https://github.com/ericvpineda", {cache: "no-store"});
+    let html = await response.text();
+
+    let DOM = new JSDOM(html);
     let document = DOM.window.document;
     const documentProjects = document.querySelectorAll(
       "svg + span[data-view-component='true'] > a "
     );
 
+    
     for (let project of documentProjects) {
       const url = "https://github.com" + project.href;
-      let { data } = await axios.get(url, {cache: false});
+      response = await fetch(url, {cache: "no-store"});
+      html = await response.text();
 
-      DOM = new JSDOM(data);
+      DOM = new JSDOM(html);
       document = DOM.window.document;
       const documentImage = document.querySelectorAll(
         "p[dir='auto'] > a > img"
@@ -28,9 +28,8 @@ export async function GET() {
       const item = {
         name: "",
         image: "",
-        url,
+        url
       };
-      
       item["name"] = project.textContent.replaceAll("\n", "");
 
       if (length > 0) {

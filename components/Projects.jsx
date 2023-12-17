@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import axios from "axios";
 import Image from "next/image";
 import { Watch } from "react-loader-spinner";
 
@@ -9,8 +8,11 @@ export default function Projects() {
 
   const fetchProjects = async () => {
     const query = "/api/projects";
-    const { data } = await axios.get(query);
-    setprojects(data);
+    const response = await fetch(query, { method: "GET", cache: "no-store" });
+    if (response.ok) {
+      const data = await response.json();
+      setprojects(data);
+    }
   };
 
   useEffect(() => {
